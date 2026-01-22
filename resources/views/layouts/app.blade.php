@@ -53,6 +53,25 @@
                     <i class="fas fa-plus w-5 text-center"></i>
                     <span>Ajouter Étudiant</span>
                 </a>
+
+                <!-- Separator -->
+                <div class="pt-4 border-t border-gray-200 mt-4">
+                    <p class="text-xs font-semibold text-gray-500 uppercase px-4 mb-2">Outils</p>
+                </div>
+
+                <!-- New Features -->
+                <a href="{{ route('rapports.index') }}" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors {{ Route::currentRouteName() === 'rapports.index' ? 'bg-blue-100 text-blue-600 font-semibold' : '' }}">
+                    <i class="fas fa-chart-bar w-5 text-center"></i>
+                    <span>Rapports PDF</span>
+                </a>
+                <a href="{{ route('imports.index') }}" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors {{ Route::currentRouteName() === 'imports.index' ? 'bg-blue-100 text-blue-600 font-semibold' : '' }}">
+                    <i class="fas fa-file-upload w-5 text-center"></i>
+                    <span>Importer CSV</span>
+                </a>
+                <a href="{{ route('emails.index') }}" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors {{ Route::currentRouteName() === 'emails.index' ? 'bg-blue-100 text-blue-600 font-semibold' : '' }}">
+                    <i class="fas fa-envelope w-5 text-center"></i>
+                    <span>Emails & Certs</span>
+                </a>
             </nav>
 
             <!-- Logout -->
