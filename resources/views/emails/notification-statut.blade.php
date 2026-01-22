@@ -48,7 +48,7 @@
             </p>
             @endif
             
-            <a href="{{ config('app.url') }}" class="button">Consulter Votre Dossier</a>
+            
             
             <p>Cordialement,<br><strong>L'équipe du Bachelor</strong></p>
         </div>
