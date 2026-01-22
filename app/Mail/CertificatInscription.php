@@ -9,6 +9,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use PDF;
 
 class CertificatInscription extends Mailable
 {
@@ -37,6 +38,17 @@ class CertificatInscription extends Mailable
 
     public function attachments(): array
     {
-        return [];
+        // Générer le certificat PDF et l'attacher
+        $pdf = PDF::loadView('emails.certificat', [
+            'etudiant' => $this->etudiant,
+            'date' => now()->format('d/m/Y'),
+        ])->output();
+
+        return [
+            \Illuminate\Mail\Mailables\Attachment::fromData(
+                fn () => $pdf,
+                'Certificat_' . $this->etudiant->nom . '_' . $this->etudiant->prenom . '.pdf'
+            )->withMime('application/pdf'),
+        ];
     }
 }

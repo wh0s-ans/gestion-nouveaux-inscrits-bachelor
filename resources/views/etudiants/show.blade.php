@@ -151,6 +151,50 @@
                     </div>
                 </div>
             </div>
+
+            <hr class="border-gray-200">
+
+            <!-- Actions Rapports & Communications -->
+            <div>
+                <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center">
+                    <i class="fas fa-tools text-blue-600 mr-3"></i>Rapports & Communications
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Rapport PDF -->
+                    <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                        <p class="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-3">Rapport PDF</p>
+                        <a href="{{ route('rapports.export-pdf-etudiants', ['search' => $etudiant->cne]) }}" class="inline-block w-full px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all text-center text-sm">
+                            <i class="fas fa-file-pdf mr-2"></i>Générer Rapport
+                        </a>
+                    </div>
+
+                    <!-- Emails -->
+                    <div class="bg-orange-50 rounded-lg p-4 border border-orange-200">
+                        <p class="text-xs font-semibold text-orange-600 uppercase tracking-wide mb-3">Notifications</p>
+                        <div class="space-y-2">
+                            <a href="{{ route('emails.envoyer-confirmation', $etudiant) }}" class="inline-block w-full px-4 py-2 bg-orange-600 text-white font-medium rounded-lg hover:bg-orange-700 transition-all text-center text-sm">
+                                <i class="fas fa-envelope mr-1"></i>Confirmation
+                            </a>
+                            <a href="{{ route('emails.envoyer-notification', $etudiant) }}" class="inline-block w-full px-4 py-2 bg-orange-600 text-white font-medium rounded-lg hover:bg-orange-700 transition-all text-center text-sm">
+                                <i class="fas fa-bell mr-1"></i>Notification
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Certificat -->
+                    <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+                        <p class="text-xs font-semibold text-green-600 uppercase tracking-wide mb-3">Certificat</p>
+                        <div class="space-y-2">
+                            <a href="{{ route('emails.telecharger-certificat', $etudiant) }}" class="inline-block w-full px-4 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-all text-center text-sm">
+                                <i class="fas fa-download mr-1"></i>Télécharger
+                            </a>
+                            <a href="{{ route('emails.envoyer-certificat', $etudiant) }}" class="inline-block w-full px-4 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-all text-center text-sm">
+                                <i class="fas fa-paper-plane mr-1"></i>Envoyer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
